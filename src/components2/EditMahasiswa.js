@@ -73,14 +73,14 @@ const EditMahasiswa = () => {
                 <div className="field">
                     <label className="label is-small"> Jumlah Uang </label>
                     <div className="control">
-                        <input className="input is-small" value={jumlah_uang} onChange={(e) => setJurusan(e.target.value)} type="number" placeholder="Jurusan Mahasiswa" />
+                        <input className="input is-small" value={jumlah_uang} onChange={(e) => setJumlahUang(e.target.value)} type="number" placeholder="Jurusan Mahasiswa" />
                     </div>
                 </div>
 
                 <div className="field">
                     <label className="label is-small"> Jurusan Mahasiswa </label>
                     <div className="control">
-                        <input className="input is-small" value={jurusan_mhs} onChange={(e) => setJumlahUang(e.target.value)} type="text" placeholder="Jumlah Uang Beasiswa" />
+                        <input className="input is-small" value={jurusan_mhs} onChange={(e) => setJurusan(e.target.value)} type="text" placeholder="Jumlah Uang Beasiswa" />
                     </div>
                 </div>
 

@@ -1,26 +1,32 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MahasiswaList from './components/MahasiswaList';
-import About from './components/About'
-import Navbar from './components/Navbar';
-import AddMahasiswa from './components/AddMahasiswa';
-import EditMahasiswa from './components/EditMahasiswa'
+import React, { useState } from "react";
+import Header from "./components/Header";
+import Form from "./components/Form";
+import "./App.css";
+import TodoList from "./components/TodoList";
+import Footer from "./components/Footer";
 
-
-function App() {
+const App = () => {
+  const [input, setInput] = useState("");
+  const [todos, setTodos] = useState([]);
+  const [editTodo, setEditTodo] = useState(null);
   return (
-    <div className='container' style={{ fontFamily: 'sans-serif' }}>
-      <Router>
-        <Routes>
-          <Route path='/' element={<MahasiswaList />}></Route>
-          <Route path='/About' element={<About />}></Route>
-          <Route path='/Navbar' element={<Navbar />}></Route>
-          <Route path='/AddMahasiswa' element={<AddMahasiswa />}></Route>
-          <Route path='/EditMahasiswa/:id' element={<EditMahasiswa />}></Route>
-        </Routes>
-      </Router>
+    <div className="container">
+      <div className="app-wrapper">
+        <div>
+          <Header />
+        </div>
+        <div>
+          <Form input={input} setInput={setInput} todos={todos} setTodos={setTodos} editTodo={editTodo} setEditTodo={setEditTodo} />
+        </div>
+        <div>
+          <TodoList todos={todos} setTodos={setTodos} setEditTodo={setEditTodo} />
+        </div>
+        <div>
+          <Footer />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
